@@ -1,0 +1,13 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/vps897/vscode-dbt/expanded-stone-367719-17f558b1f580.json # replace this with the full path to your keyfile
+      project: expanded-stone-367719
+      dataset: dbt_demo_ldg
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
